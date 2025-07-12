@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Alberto Clocks Co. LTD - Luxury Timepieces</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --nav-bg: #fff;
+            --nav-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            background-color: white;
+            position: relative;
+        }
+        
+        /* Navigation */
+        .top-nav {
+            background-color: var(--nav-bg);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--nav-shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+        }
+        
+        .nav-item {
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px 20px;
+            margin: 0 5px;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            border-radius: 4px;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .nav-item:hover::after {
+            width: 80%;
+            left: 10%;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border: none;
+            padding: 10px 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.3s;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--light-color);
+            color: var(--accent-color);
+            padding-left: 25px;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+            filter: brightness(0) invert(1);
+        }
+        
+        .logo:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        
+        .company-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 0;
+            background: linear-gradient(to right, #f39c12, #e74c3c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .visitor-counter {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .visitor-counter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .visitor-counter i {
+            margin-right: 8px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            position: relative;
+        }
+        
+        .hero-left {
+            flex: 2;
+            min-width: 300px;
+            padding: 0;
+        }
+        
+        .hero-right {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background-color: var(--light-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Carousel */
+        .carousel-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 5px;
+            bottom: 20%;
+            left: 10%;
+            right: 10%;
+            text-align: left;
+        }
+        
+        .carousel-caption h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            opacity: 1;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        /* Company Info */
+        .company-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+        
+        .company-desc p {
+            margin-bottom: 15px;
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            display: inline-block;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 20px 40px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .product-img-container {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .product-subtitle {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .product-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            height: 120px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        /* Collection Section */
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0 20px 40px;
+        }
+        
+        .collection-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .collection-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .collection-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .collection-item:hover .collection-img {
+            transform: scale(1.1);
+        }
+        
+        .collection-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .collection-item:hover .collection-info {
+            transform: translateY(0);
+        }
+        
+        .collection-name {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .collection-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+        
+        /* Footer Ticker */
+        .footer-ticker {
+            background-color: var(--primary-color);
+            height: 40px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ticker-content {
+            display: flex;
+            position: absolute;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+            color: white;
+            align-items: center;
+            height: 100%;
+            padding-left: 100%;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .ticker-item {
+            margin-right: 50px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .ticker-icon {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Div Sections */
+        .content-section {
+            padding: 60px 20px;
+            min-height: 500px;
+            display: none;
+        }
+        
+        #b8 { background-color: #f8f9fa; }
+        #b6 { background-color: #e9ecef; }
+        #b51 { background-color: #f8f9fa; }
+        #B9 { background-color: #e9ecef; }
+        
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .fade-out {
+            animation: fadeOut 0.5s ease-out;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .company-title {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-caption h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-left, .hero-right {
+                flex: 100%;
+            }
+            
+            .hero-right {
+                padding: 30px 20px;
+            }
+            
+            .carousel-item img {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                margin: 5px 0;
+                padding: 10px;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                animation: none;
+                display: none;
+            }
+            
+            .dropdown:hover .dropdown-menu {
+                display: block;
+                animation: fadeIn 0.3s;
+            }
+			.logo-image{
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            .visitor-counter {
+                justify-content: center;
+            }
+            
+            .carousel-item img {
+                height: 300px;
+            }
+            
+            .carousel-caption {
+                bottom: 10%;
+                left: 5%;
+                right: 5%;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .collection-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .ticker-content {
+                animation: ticker-mobile 20s linear infinite;
+            }
+            
+            @keyframes ticker-mobile {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-150%); }
+            }
+            
+            .carousel-caption h3 {
+                font-size: 1.2rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 0.9rem;
+            }
+            
+            .company-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <div class="top-nav">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img src="watches/watch-repair-icon-vector-logo-260nw-670595890.webp"  alt="Alberto Clocks Logo" class="logo" id="d221">
+                        <h1 class="company-title">ALBERTO CLOCKS Co. LTD</h1>
+                    </div>
+                    <div class="visitor-counter" id="b222" aria-label="Visitor Counter">
+                        <i class="fas fa-users"></i> Visitors: <span id="visitor-count">0</span>
+                    </div>
+                </div>
+                <nav class="nav-container" aria-label="Main Navigation">
+                    <div class="dropdown">
+                        <a href="#b51" class="nav-item" aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="#" class="dropdown-item" role="menuitem">Luxury Watches</a>
+                            <a href="#" class="dropdown-item" role="menuitem">Vintage Watches</a>
+                            <a href="#" class="dropdown-item" role="menuitem">Smart Watches</a>
+                            <a href="#" class="dropdown-item" role="menuitem">Clocks</a>
+                        </div>
+                    </div>
+                    <a href="#b6" class="nav-item">TECHNOLOGY</a>
+                    <a href="#B9" class="nav-item">SUPPORT</a>
+                    <a href="#b8" class="nav-item">STORE</a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-item" aria-haspopup="true" aria-expanded="false">MORE ABOUT US</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="#" class="dropdown-item" role="menuitem">Site Map</a>
+                            <a href="#" class="dropdown-item" role="menuitem">Gallery</a>
+                            <a href="#" class="dropdown-item" role="menuitem">Contact Us</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Hero Section -->
+            <section class="hero-section" aria-label="Hero Section">
+                <div class="hero-left">
+                    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/a.jpg" width="2048" height="1365" alt=""/>
+                                <div class="carousel-caption">
+                                  <h3>ENJOY OUR COLLECTION</h3>
+                                    <p>Discover timeless pieces in our gallery store</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/c.jpg" width="1024" height="1024" alt=""/> 
+                                <div class="carousel-caption">
+                                  <h3>ALL TYPES OF CLOCKS & WATCHES</h3>
+                                    <p>From vintage to modern, we have it all</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/d.jpg" width="612" height="408" alt=""/> 
+                                <div class="carousel-caption">
+                                  <h3>EXPERT WATCH REPAIR</h3>
+                                    <p>Restore your timepieces to their former glory</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/e.jpg" width="612" height="393" alt=""/>
+                                <div class="carousel-caption">
+                                  <h3>SMART WATCHES</h3>
+                                    <p>Cutting-edge technology at competitive prices</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <aside class="hero-right" aria-label="Company Info">
+                    <div class="company-info">
+                        <div class="company-desc">
+                            <p>Alberto Clocks Company is a full-service watch repair, appraisal, and retail store - offering the finest selection of luxury timepieces with first-class service.</p>
+                            <p>We carry a wide selection of brand new watches including Rolex, Tudor, Michael Kors, Citizen Eco-Drive, Bulova, wall clocks, smart watches and more. Our expert craftsmen provide meticulous repair services to keep your timepieces running perfectly.</p>
+                            <p>Founded in 1985, we've been serving watch enthusiasts for over 35 years with unparalleled expertise and customer service.</p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            
+            <!-- Store Section (Div b8) -->
+            <section id="b8" class="content-section">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h2>OUR STORE COLLECTION</h2>
+                    </div>
+                    <div class="collection-grid">
+                        <div class="collection-item">
+                            <img src="watches/kk.webp" class="collection-img" alt="Rolex watch">
+                            <div class="collection-info">
+                                <div class="collection-name">ROLEX Day-Date</div>
+                                <div class="collection-price">USD$81,715</div>
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <img src="watches/webp100-t3-scale100.webp" class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">LUXURY Hutaomu</div>
+                                <div class="collection-price">US$309</div>
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <img src="watches/shopping.webp" class="collection-img" alt="Smart watch">
+                            <div class="collection-info">
+                                <div class="collection-name">Smartwatch Oraimo osww-805</div>
+                                <div class="collection-price">US$20.19</div>
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <img src="watches/Watch WhatsAppBusiness.jpg" class="collection-img" alt="Wall Clock">
+                            <div class="collection-info">
+                                <div class="collection-name"> VINTAGE Hutaomu</div>
+                                <div class="collection-price">US$38.75</div>
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <img src="watches/TudorBlackBay5479000N-2023WatchVault06_2048x.webp" class="collection-img" alt="Chronograph watch">
+                            <div class="collection-info">
+                                <div class="collection-name">NAVIFORCE Chronograph</div>
+                                <div class="collection-price">US$290+tax</div>
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <img src="watches/Hig.jpg"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">Luminous Hands</div>
+                                <div class="collection-price">US$450</div>
+                            </div>
+                        </div>
+						 <div class="collection-item">
+                            <img src="watches/iyu.webp"  class="collection-img" alt="Chronograph watch">
+                            <div class="collection-info">
+                                <div class="collection-name">citizen Eco-drive pilot chronograph</div>
+                                <div class="collection-price">US$569.99+tax</div>
+                            </div>
+                    </div>
+						<div class="collection-item">
+                            <img src="watches/Screenshot_20250625-150840_WhatsAppBusiness.jpg" class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">Vintage loop Hands</div>
+                                <div class="collection-price">US$450</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/2-2025-05-.webp" class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">wall clock Drilling</div>
+                                <div class="collection-price">US$450</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/kpk.webp"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">MAGELLAN DOUBLE AUTOMATIC</div>
+                                <div class="collection-price">US$450</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/zegarek-meski-atlantic-worldmaster-manufacture-mechanical-52952-41-934.jpg"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name"> vintage DOUBLE AUTOMATIC</div>
+                                <div class="collection-price">US$450</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/20250708_184729.jpg"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name"> vintage Bcoo Bece</div>
+                                <div class="collection-price">US$350</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/20250708_184648.jpg"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name"> Vintage Loop hands</div>
+                                <div class="collection-price">US$450</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/Hhh.jpg"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">BOBOBIRD</div>
+                                <div class="collection-price">US$250.2</div>
+                            </div>
+                        </div>
+						<div class="collection-item">
+                            <img src="watches/s-l1600.webp"  class="collection-img" alt="Luxury watch">
+                            <div class="collection-info">
+                                <div class="collection-name">NAVIFORCE Chronograph</div>
+                                <div class="collection-price">US$250.2+Tax</div>
+                            </div>
+                        </div>
+                </div>
+            </section>
+            
+            <!-- Technology Section (Div B6) -->
+            <section id="b6" class="content-section">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h2>OUR TECHNOLOGY</h2>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/images.jpeg"  class="product-img" alt="Mechanical technology">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">MECHANICAL MASTERY</h3>
+                                <div class="product-subtitle">PRECISION ENGINEERING</div>
+                                <div class="product-desc">
+                                    Our mechanical watches feature intricate gear systems with mainsprings powering precise movements. The balance wheel and escapement mechanism regulate timekeeping to within seconds per day. Each component is hand-finished by our master watchmakers for optimal performance and longevity.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/download.jpeg"  class="product-img" alt="Quartz technology">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">QUARTZ PRECISION</h3>
+                                <div class="product-subtitle">BATTERY-POWERED ACCURACY</div>
+                                <div class="product-desc">
+                                    Our quartz movements utilize the piezoelectric properties of quartz crystals to maintain exceptional accuracy. When electrified, the crystal vibrates at 32,768 Hz, providing a stable frequency that our integrated circuits convert into precise one-second pulses for the motor that moves the watch hands.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/shutterstock_1821872.jpg"  class="product-img" alt="Smart technology">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">SMART TECHNOLOGY</h3>
+                                <div class="product-subtitle">CONNECTED INNOVATION</div>
+                                <div class="product-desc">
+                                    Our smartwatches combine traditional craftsmanship with modern technology, featuring AMOLED displays, multi-core processors, and advanced sensors. With Bluetooth 5.0, NFC, and WiFi connectivity, these watches seamlessly integrate with your digital life while maintaining Alberto's signature style.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Products Section (Div b51) -->
+            <section id="b51" class="content-section">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h2>OUR PRODUCTS</h2>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/lu.webp" class="product-img" alt="LUXURY WATCH"/>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">LUXURY WATCHES</h3>
+                                <div class="product-subtitle">TIMELESS ELEGANCE</div>
+                                <div class="product-desc">
+                                    Our luxury watches represent the pinnacle of horological craftsmanship. Each timepiece is assembled by hand using premium materials like 18k gold, platinum, and sapphire crystals. Featuring intricate mechanical movements with complications like perpetual calendars, moon phases, and tourbillons, these watches are heirlooms meant to last generations.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/22.webp" class="product-img" alt="Vintage watch">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">VINTAGE WATCHES</h3>
+                                <div class="product-subtitle">HISTORY REDISCOVERED</div>
+                                <div class="product-desc">
+                                    Our vintage collection features carefully restored timepieces from the 1920s through the 1980s. Each watch is authenticated, serviced, and restored by our master watchmakers using period-correct parts when available. These mechanical marvels offer a tangible connection to horological history with their unique patinas and classic designs.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/collection-smart-watches-different-colors-desi.webp"  class="product-img" alt="Smart watch">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">SMART WATCHES</h3>
+                                <div class="product-subtitle">MODERN CONVENIENCE</div>
+                                <div class="product-desc">
+                                    Our smartwatches blend cutting-edge technology with Alberto's design aesthetic. Featuring health monitoring (ECG, SpO2, sleep tracking), GPS, and multi-day battery life, these watches keep you connected without sacrificing style. Customizable watch faces and interchangeable straps allow personalization to match any occasion.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card animate__animated animate__fadeIn">
+                            <div class="product-img-container">
+                                <img src="watches/2-2025-05-14.webp" class="product-img" alt="Clock">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">CLOCKS</h3>
+                                <div class="product-subtitle">HOME & OFFICE TIMEPIECES</div>
+                                <div class="product-desc">
+                                    From elegant mantel clocks to precision atomic wall clocks, our collection ensures accurate timekeeping with style. Featuring quartz, mechanical, and radio-controlled movements, these clocks are crafted from fine woods, metals, and glass. Many feature Westminster chimes, silent movements, or temperature/humidity displays for added functionality.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Support Section (Div B9) -->
+            <section id="B9" class="content-section">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h2>CUSTOMER SUPPORT</h2>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src=  "watches/Professional-.jpg" class="product-img" alt="Repair service">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">REPAIR SERVICES</h3>
+                                <div class="product-subtitle">EXPERT WATCHMAKING</div>
+                                <div class="product-desc">
+                                    Our certified watchmakers provide comprehensive repair services for all mechanical and quartz watches. From simple battery replacements to complete movement overhauls, we use specialized tools and genuine parts to restore your timepiece to factory specifications. All repairs come with a 1-year warranty on workmanship.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="watches/uhh.jpeg"  class="product-img" alt="Authentication service">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">AUTHENTICATION</h3>
+                                <div class="product-subtitle">GENUINE CERTIFICATION</div>
+                                <div class="product-desc">
+                                    Our authentication service provides documented verification of your timepiece's authenticity. Using magnification, movement analysis, and comparison with manufacturer databases, we can confirm the legitimacy of your watch or clock. Receive a detailed certificate suitable for insurance purposes or resale documentation.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="watches/ioiu.jpg" class="product-img" alt="Customer service">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">CUSTOMER CARE</h3>
+                                <div class="product-subtitle">DEDICATED SUPPORT</div>
+                                <div class="product-desc">
+                                    Our customer care team is available via phone, email, or live chat to answer questions about your Alberto timepiece. We provide guidance on care, operation, and troubleshooting. For complex issues, we can arrange in-store consultations with our watchmakers. All Alberto watches come with a 5-year international warranty.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-ticker">
+                <div class="ticker-content">
+                    <div class="ticker-item">
+                        <i class="fas fa-calendar-alt ticker-icon"></i>
+                        <span id="current-date"></span>
+                    </div>
+                    <div class="ticker-item">
+                        <i class="fas fa-clock ticker-icon"></i>
+                        <span id="current-time"></span>
+                    </div>
+                    <div class="ticker-item">
+                        <i class="fas fa-map-marker-alt ticker-icon"></i>
+                        <span id="current-location">Loading location...</span>
+                    </div>
+                    <div class="ticker-item">
+                        <i class="fas fa-shopping-cart ticker-icon"></i>
+                        <span>Special Offer: 15% off all vintage watches this week!</span>
+                    </div>
+                    <div class="ticker-item">
+                        <i class="fas fa-phone ticker-icon"></i>
+                        <span>Call us: + (256) 752927197</span>
+                    </div>
+                    <div class="ticker-item">
+                        <i class="fas fa-envelope ticker-icon"></i>
+                        <span>Email: info@albertoclocks.com</span>
+                    </div>
+                    <div class="ticker-item">
+                        <i class="fas fa-store ticker-icon"></i>
+                        <span>Visit our flagship store at 123 Time Square, accaica mall</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show default section (hide others)
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                if(section.id !== 'b51') {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+            
+            // Navigation click handlers
+
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        
+                        // Hide all sections
+                        sections.forEach(section => {
+                            section.classList.remove('fade-in');
+                            section.classList.add('fade-out');
+                            setTimeout(() => {
+                                section.style.display = 'none';
+                            }, 500);
+                        });
+                        
+                        // Show target section
+                        setTimeout(() => {
+                            const targetSection = document.getElementById(targetId);
+                            if(targetSection) {
+                                targetSection.style.display = 'block';
+                                targetSection.classList.remove('fade-out');
+                                targetSection.classList.add('fade-in');
+                                
+                                // Scroll to top of section
+                                window.scrollTo({
+                                    top: targetSection.offsetTop - 100,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }, 500);
+                        
+                        // Update active nav item
+                        document.querySelectorAll('.nav-item').forEach(navItem => {
+                            navItem.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Update date and time
+            function updateDateTime() {
+                const now = new Date();
+                document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', { 
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+                });
+                document.getElementById('current-time').textContent = now.toLocaleTimeString('en-US', {
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                });
+            }
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+
+            // Visitor counter (simulated with localStorage)
+            let visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.getElementById('visitor-count').textContent = visitorCount;
+
+            // Get location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        const lat = position.coords.latitude.toFixed(2);
+                        const lon = position.coords.longitude.toFixed(2);
+                        
+                        // Use geocoding API to get location name (simplified here)
+                        const locationText = `Your location: ${lat}°N, ${lon}°W`;
+                        document.getElementById('current-location').textContent = locationText;
+                    },
+                    function(error) {
+                        document.getElementById('current-location').textContent = "Location: Enable to view";
+                    }
+                );
+            } else {
+                document.getElementById('current-location').textContent = "Geolocation not supported";
+            }
+
+            // Initialize carousel
+            const myCarousel = new bootstrap.Carousel(document.getElementById('mainCarousel'), {
+                interval: 5000,
+                wrap: true,
+                pause: 'hover'
+            });
+            
+            // Fade in animation for page load
+            document.body.classList.add('fade-in');
+            
+            // Logo animation
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('mouseover', () => {
+                    logo.style.transform = 'rotate(-5deg) scale(1.1)';
+                });
+                logo.addEventListener('mouseout', () => {
+                    logo.style.transform = 'rotate(0) scale(1)';
+                });
+            }
+            
+            // Dropdown menu animations
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    menu.style.display = 'block';
+                    setTimeout(() => {
+                        menu.style.opacity = '1';
+                    }, 10);
+                });
+                
+                dropdown.addEventListener('mouseleave', () => {
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    menu.style.opacity = '0';
+                    setTimeout(() => {
+                        menu.style.display = 'none';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
